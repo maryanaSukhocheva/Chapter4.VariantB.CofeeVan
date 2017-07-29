@@ -21,11 +21,16 @@ public class CoffeeFabric {
         Coffee result;
         CoffeeCondition coffeeCondition = Enums.random(CoffeeCondition.class);
         CoffeeWrap coffeeWrap = Enums.random(CoffeeWrap.class);
-        if (cCoffee.equals(Arabica.class)) result =
-                new Arabica(coffeeCondition, coffeeWrap);
-        else if (cCoffee.equals(Robusta.class)) result =
-                new Robusta(coffeeCondition, coffeeWrap);
-        else result = new Liberica(coffeeCondition, coffeeWrap);
+        if (cCoffee.equals(Arabica.class)) {
+            result = new Arabica(coffeeCondition, coffeeWrap);
+        } else {
+            if (cCoffee.equals(Robusta.class)) {
+                result = new Robusta(coffeeCondition, coffeeWrap);
+            } else {
+                result = new Liberica(coffeeCondition, coffeeWrap);
+            }
+        }
+        
         return result;
     }
 

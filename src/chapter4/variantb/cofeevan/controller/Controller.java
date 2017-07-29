@@ -130,7 +130,9 @@ public class Controller {
     public void fillStorage() {
         while(true) {
             IItem item = coffeeFabric.getRandomCoffee();
-            if (!hasFreeMoney(item.getCost()) || !storage.add(item)) break;
+            if (!hasFreeMoney(item.getCost()) || !storage.add(item)) {
+                break;
+            }
             usedMoney += item.getCost();
         }
     }
@@ -166,8 +168,11 @@ public class Controller {
      * @param volume обьем увеличения
      */
     public void upVolumeOfStorage(int volume) {
-        if (volume > 0) storage.upVolume(volume);
-        else System.out.println("Volume cant be zero or negative");
+        if (volume > 0){
+            storage.upVolume(volume);
+        } else { 
+            System.out.println("Volume cant be zero or negative");
+        }
     }
 
     /**
@@ -177,8 +182,11 @@ public class Controller {
      * @param days кол-во дней
      */
     public void increaseDateOfExpiry(int days) {
-        if (days > 0) storage.increaseDateOfExpiry(days);
-        else System.out.println("days cant be zero or negative");
+        if (days > 0) {
+            storage.increaseDateOfExpiry(days);
+        } else {
+            System.out.println("days cant be zero or negative");
+        }
     }
 
     /**

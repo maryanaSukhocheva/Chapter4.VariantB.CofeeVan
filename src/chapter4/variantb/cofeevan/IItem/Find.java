@@ -20,7 +20,8 @@ public enum Find {
             throws CloneItemException {
         for (IItem item : items) {
             if (startCost <= item.getCost()
-                    && endCost >= item.getCost()) {
+                    && endCost >= item.getCost()) 
+            {
                 findItems.add(item.getClone());
             }
         }

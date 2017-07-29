@@ -13,9 +13,12 @@ public enum Sort {
     BY_VOLUME;
 
     public void sort(List<IItem> items) {
-        if (this == BY_COST)
-            Collections.sort(items, new SortByCost());
-        else if (this == BY_VOLUME)
-            Collections.sort(items, new SortByVolume());
+        if (this == BY_COST) {
+           Collections.sort(items, new SortByCost()); 
+        }  else {
+                if (this == BY_VOLUME) {
+                    Collections.sort(items, new SortByVolume());
+                }
+        }
     }
 }
